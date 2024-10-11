@@ -294,7 +294,7 @@ def save_image_in_local(
 
 def get_detections(target_image, selected_image):
     image = cv2.imread(target_image)
-    print(f"image = {image}")
+    # print(f"image = {image}")
 
     slicer = sv.InferenceSlicer(callback=callback)
 
@@ -430,7 +430,7 @@ def get_detections(target_image, selected_image):
 
 
 def callback(image_slice: np.ndarray) -> sv.Detections:
-    model = get_model(model_id="yolov8x-640")
+    model = get_model(model_id="yolov11x-640")
 
     results = model.infer(image_slice)[0]
 
